@@ -34,6 +34,17 @@ test = ["anyio[trio]", "coverage[toml] (>=7)", "exceptiongroup (>=1.2.0)", "hypo
 trio = ["trio (>=0.26.1)"]
 
 [[package]]
+name = "async-timeout"
+version = "5.0.1"
+description = "Timeout context manager for asyncio programs"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "async_timeout-5.0.1-py3-none-any.whl", hash = "sha256:39e3809566ff85354557ec2398b55e096c8364bacac9405a7a1fa429e77fe76c"},
+    {file = "async_timeout-5.0.1.tar.gz", hash = "sha256:d9321a7a3d5a6a5e187e824d2fa0793ce379a202935782d555d6e9d2735677d3"},
+]
+
+[[package]]
 name = "attrs"
 version = "24.3.0"
 description = "Classes Without Boilerplate"
@@ -234,6 +245,19 @@ files = [
 
 [package.extras]
 test = ["pytest (>=6)"]
+
+[[package]]
+name = "falkordb"
+version = "1.0.10"
+description = "Python client for interacting with FalkorDB database"
+optional = false
+python-versions = "<4.0,>=3.8"
+files = [
+    {file = "falkordb-1.0.10.tar.gz", hash = "sha256:f3db65e4e1f85f1b68a8cda97b1f7d756af4942a88712696fb2cfa53537025b8"},
+]
+
+[package.dependencies]
+redis = ">=5.0.1,<6.0.0"
 
 [[package]]
 name = "filelock"
@@ -438,13 +462,13 @@ files = [
 
 [[package]]
 name = "jinja2"
-version = "3.1.4"
+version = "3.1.5"
 description = "A very fast and expressive template engine."
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "jinja2-3.1.4-py3-none-any.whl", hash = "sha256:bc5dd2abb727a5319567b7a813e6a2e7318c39f4f487cfe6c89c6f9c7d25197d"},
-    {file = "jinja2-3.1.4.tar.gz", hash = "sha256:4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"},
+    {file = "jinja2-3.1.5-py3-none-any.whl", hash = "sha256:aba0f4dc9ed8013c424088f68a5c226f7d6097ed89b246d7749c2ec4175c6adb"},
+    {file = "jinja2-3.1.5.tar.gz", hash = "sha256:8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"},
 ]
 
 [package.dependencies]
@@ -1111,6 +1135,24 @@ files = [
 ]
 
 [[package]]
+name = "redis"
+version = "5.2.1"
+description = "Python client for Redis database and key-value store"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "redis-5.2.1-py3-none-any.whl", hash = "sha256:ee7e1056b9aea0f04c6c2ed59452947f34c4940ee025f5dd83e6a6418b6989e4"},
+    {file = "redis-5.2.1.tar.gz", hash = "sha256:16f2e22dff21d5125e8481515e386711a34cbec50f0e44413dd7d9c060a54e0f"},
+]
+
+[package.dependencies]
+async-timeout = {version = ">=4.0.3", markers = "python_full_version < \"3.11.3\""}
+
+[package.extras]
+hiredis = ["hiredis (>=3.0.0)"]
+ocsp = ["cryptography (>=36.0.1)", "pyopenssl (==23.2.1)", "requests (>=2.31.0)"]
+
+[[package]]
 name = "regex"
 version = "2024.11.6"
 description = "Alternative regular expression module, to replace re."
@@ -1570,4 +1612,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "4d476dc40eeaba18c76a4cddd0cad3aec7ea4a7f122039553028f8692c27f70c"
+content-hash = "1048b39d8d9acff742b91f4ed0d86a7d34e2fc7bb1ba9a24a1498e1ea862dc4c"
